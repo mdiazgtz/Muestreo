@@ -1,11 +1,9 @@
-//Diseñar un codigo en R, Python o C que nos permita calcular estimadores, 
-//cotas de error de estimación, intervalos de confianza al 95% 
-//y margenes de error para los distintos parametros señalados en clase: 
-//media, total y proporción. Todo lo anterior a traves de la teoría 
+//codigo que nos permite calcular estimadores, 
+//cotas de error de estimaciÃ³n, intervalos de confianza al 95% 
+//y margenes de error para los distintos parametros seÃ±alados en clase: 
+//media, total y proporciÃ³n. Todo lo anterior a traves de la teorÃ­a 
 //desarrollada para el Muestreo Aleatorio Simple. //
 
-//Alternativa: Realizar un excel detallado que nos llevé al mismo fin
-//Criterios a evaluar: Detalle, orden y estructura tanto del codigo como del excel.
 
 #include<stdio.h>
 #include<stdlib.h>
@@ -42,7 +40,7 @@ int main()
 	float yi,suma,sc,sumyi; //contadores y variables necesarias de nuestro codigo
 	
 	printf("\n\tMEDIA POBLACIONAL 'Miu' A PARTIR DE UNA M.A.S");
-	printf("\n\n\t\t\tMenu\n\n\t1)Estimador de la Media Poblacional\n\t2)Varianza del estimador miu gorro (M.A.S CON REEMPLAZO) \n\t3)Varianza del estimador miu gorro (M.A.S SIN REEMPLAZO)\n\t4)Cota\n\t5)Intervalos de confianza\n\t6)Margen de Error\n\t7)Calcular tamaño de muestra");
+	printf("\n\n\t\t\tMenu\n\n\t1)Estimador de la Media Poblacional\n\t2)Varianza del estimador miu gorro (M.A.S CON REEMPLAZO) \n\t3)Varianza del estimador miu gorro (M.A.S SIN REEMPLAZO)\n\t4)Cota\n\t5)Intervalos de confianza\n\t6)Margen de Error\n\t7)Calcular tamaÃ±o de muestra");
 	printf("\n\n\n\tSeleccione una opcion [1-7]: ");
 	scanf("%i",&numero);
 	if(numero==1 || numero==2 || numero==3 || numero==4 || numero==5 || numero==6 || numero==7)
@@ -56,7 +54,7 @@ int main()
 		printf("\n\tUsted selecciono estimar la media poblacional");
 		printf("\n\tIndique el tamano de su muestra, es decir el valor de n:");
 		scanf("%i",&n);
-		printf("\n\t ¿Usted conoce la suma de las yi? [SI=1/NO=2]: ");
+		printf("\n\t Â¿Usted conoce la suma de las yi? [SI=1/NO=2]: ");
 		scanf("%i",&a);
 		if(a==1)
 		{
@@ -109,7 +107,7 @@ int main()
 		printf("\n\tUsted selecciono estimar la varianza del estimador para una M.A.S SIN reemplazo");
 		
 		{
-			printf("\n\t\t ¿Sigma cuadrada es conocida? [SI=1/NO=2]: ");
+			printf("\n\t\t Â¿Sigma cuadrada es conocida? [SI=1/NO=2]: ");
 			scanf("%i",&r);
 			if(r==1){
 				printf("\n\tVARIANZA PARA SIGMA CUADRADA CONOCIDA");
@@ -140,7 +138,7 @@ int main()
 		case 4:
 			{
 				printf("\n\tUsted selecciono calcular la cota");
-				printf("\n\t\t ¿Sigma cuadrada es conocida? [SI=1/NO=2]: ");
+				printf("\n\t\t Â¿Sigma cuadrada es conocida? [SI=1/NO=2]: ");
 			    scanf("%i",&r1);
 			    if(r1==1)
 			    {
@@ -168,7 +166,7 @@ int main()
 		case 5:
 			{
 				printf("\n\t Usted selecciono calcular los intervalos de confianza: ");
-				printf("\n\t\t ¿Sigma cuadrada es conocida? [SI=1/NO=2]: ");
+				printf("\n\t\t Â¿Sigma cuadrada es conocida? [SI=1/NO=2]: ");
 			    scanf("%i",&r2);
 			    if(r2==1)
 			    {
@@ -201,7 +199,7 @@ int main()
 		case 6:
 			{
 				printf("\n\t Usted selecciono calcular el Margen de Error: ");
-				printf("\n\t\t ¿Sigma cuadrada es conocida? [SI=1/NO=2]: ");
+				printf("\n\t\t Â¿Sigma cuadrada es conocida? [SI=1/NO=2]: ");
 			    scanf("%i",&r3);
 			    if(r3==1)
 			    {
@@ -229,31 +227,31 @@ int main()
 			break;
 			case 7:
 				{
-					printf("\n\t Usted selecciono calcular el tamaño de la muestra: ");
-					printf("\n\t\t ¿Sigma cuadrada es conocida? [SI=1/NO=2]: ");
+					printf("\n\t Usted selecciono calcular el tamaÃ±o de la muestra: ");
+					printf("\n\t\t Â¿Sigma cuadrada es conocida? [SI=1/NO=2]: ");
 			        scanf("%i",&r4);
 			        if(r4==1)
 			        {
-			        	printf("\n\tIndique el tamaño de la poblacion, es decir el valor de N: ");
+			        	printf("\n\tIndique el tamaÃ±o de la poblacion, es decir el valor de N: ");
 			        	scanf("%i",&Npobm1);
 			        	printf("\n\tIndique el valor de sigma cuadrada: ");
 			        	scanf("%f",&sigmacuadradam1);
 			        	printf("\n\tIndique el valor de cota: ");
 			        	scanf("%f",&Bdem1);
 			        	nmuesm1=((Npobm1)*(sigmacuadradam1))/(((Npobm1-1)*((Bdem1*Bdem1)/4))+sigmacuadradam1);
-			        	printf("\n\n\tEl tamaño de la muestra es de: %.2f",nmuesm1);
+			        	printf("\n\n\tEl tamaÃ±o de la muestra es de: %.2f",nmuesm1);
 			    	
 					}
 					else
 					{
-						printf("\n\tIndique el tamaño de la poblacion, es decir el valor de N: ");
+						printf("\n\tIndique el tamaÃ±o de la poblacion, es decir el valor de N: ");
 			        	scanf("%i",&Npobm2);
 			        	printf("\n\tIndique el valor de sigma cuadrada: ");
 			        	scanf("%f",&sigmacuadradam2);
 			        	printf("\n\tIndique el valor de cota: ");
 			        	scanf("%f",&Bdem2);
 			        	nmuesm2=((Npobm2)*(sigmacuadradam2))/(((Npobm2-1)*((Bdem2*Bdem2)/4))+sigmacuadradam2);
-			        	printf("\n\n\tEl tamaño de la muestra es de: %.2f",nmuesm2);
+			        	printf("\n\n\tEl tamaÃ±o de la muestra es de: %.2f",nmuesm2);
 						
 					}
 					
@@ -284,7 +282,7 @@ int main()
 	float Npobt2,sigmacuadradat2,Bdet2;
 	
 	printf("\n\tTOTAL POBLACIONAL 't' A PARTIR DE UNA M.A.S");
-	printf("\n\n\t\t\t Menu\n\n\t1)Estimador de el Total Poblacional\n\t2)Varianza del estimador t gorro (M.A.S CON REEMPLAZO) \n\t3)Varianza del estimador t gorro (M.A.S SIN REEMPLAZO)\n\t4)Cota\n\t5)Intervalos de confianza\n\t6)Margen de Error\n\t7)Calcular tamaño de la muestra");
+	printf("\n\n\t\t\t Menu\n\n\t1)Estimador de el Total Poblacional\n\t2)Varianza del estimador t gorro (M.A.S CON REEMPLAZO) \n\t3)Varianza del estimador t gorro (M.A.S SIN REEMPLAZO)\n\t4)Cota\n\t5)Intervalos de confianza\n\t6)Margen de Error\n\t7)Calcular tamaÃ±o de la muestra");
 	printf("\n\n\n\tSeleccione una opcion [1-7]: ");
 	scanf("%i",&num);
 	if(num==1 || num==2 || num==3 || num==4 || num==5 || num==6 || num==7)
@@ -311,7 +309,7 @@ int main()
 		printf("\n\tUsted selecciono estimar la varianza: ");
 		
 		{
-			printf("\n\t\t ¿Sigma cuadrada es conocida? [SI=1/NO=2]: ");
+			printf("\n\t\t Â¿Sigma cuadrada es conocida? [SI=1/NO=2]: ");
 			scanf("%i",&l);
 			if(l==1){
 				printf("\n\tVARIANZA PARA SIGMA CUADRADA CONOCIDA");
@@ -342,7 +340,7 @@ int main()
 		case 4:
 			{
 				printf("\n\tUsted selecciono calcular la cota");
-				printf("\n\t\t ¿Sigma cuadrada es conocida? [SI=1/NO=2]: ");
+				printf("\n\t\t Â¿Sigma cuadrada es conocida? [SI=1/NO=2]: ");
 			    scanf("%i",&f);
 			    if(f==1){
 				printf("\n\tCOTA PARA SIGMA CONOCIDA");
@@ -364,7 +362,7 @@ int main()
 		case 5:
 			{
 				printf("\n\t Usted selecciono calcular los intervalos de confianza (entre cota y t gorro): ");
-		        printf("\n\t\t ¿Sigma cuadrada es conocida? [SI=1/NO=2]: ");
+		        printf("\n\t\t Â¿Sigma cuadrada es conocida? [SI=1/NO=2]: ");
 		        scanf("%i",&h);
 		        if(h==1){
 		        	printf("\n\tLIMITES PARA SIGMA CONOCIDA");
@@ -395,7 +393,7 @@ int main()
 		case 6:
 			{
 				printf("\n\t Usted selecciono calcular el Margen de Error: ");
-				printf("\n\t\t¿Sigma cuadrada es conocida? [SI=1/NO=2]: ");
+				printf("\n\t\tÂ¿Sigma cuadrada es conocida? [SI=1/NO=2]: ");
 				scanf("%i",&g);
 				if(g==1){
 					printf("\n\tIndique el valor de t Gorro:");
@@ -419,32 +417,32 @@ int main()
 			break;
 			case 7:
 				{
-					printf("\n\t Usted selecciono calcular el tamaño de la muestra: ");
-					printf("\n\t\t ¿Sigma cuadrada es conocida? [SI=1/NO=2]: ");
+					printf("\n\t Usted selecciono calcular el tamaÃ±o de la muestra: ");
+					printf("\n\t\t Â¿Sigma cuadrada es conocida? [SI=1/NO=2]: ");
 			        scanf("%i",&g4);
 			        if(g4==1)
 			        {
-			        	printf("\n\tIndique el tamaño de la poblacion, es decir el valor de N: ");
+			        	printf("\n\tIndique el tamaÃ±o de la poblacion, es decir el valor de N: ");
 			        	scanf("%i",&Npobt1);
 			        	printf("\n\tIndique el valor de sigma cuadrada: ");
 			        	scanf("%f",&sigmacuadradat1);
 			        	printf("\n\tIndique el valor de cota: ");
 			        	scanf("%f",&Bdet1);
 			        	nmuest1=((Npobt1)*(sigmacuadradat1))/(((Npobt1-1)*((Bdet1*Bdet1)/(4*Npobt1*Npobt1)))+sigmacuadradat1);
-			        	printf("\n\n\tEl tamaño de la muestra es de: %.2f",nmuest1);
+			        	printf("\n\n\tEl tamaÃ±o de la muestra es de: %.2f",nmuest1);
 			    	
 			    	
 					}
 					else
 					{
-						printf("\n\tIndique el tamaño de la poblacion, es decir el valor de N: ");
+						printf("\n\tIndique el tamaÃ±o de la poblacion, es decir el valor de N: ");
 			        	scanf("%i",&Npobt2);
 			        	printf("\n\tIndique el valor de sigma cuadrada: ");
 			        	scanf("%f",&sigmacuadradat2);
 			        	printf("\n\tIndique el valor de cota: ");
 			        	scanf("%f",&Bdet2);
 			        	nmuest2=((Npobt2)*(sigmacuadradat2))/(((Npobt2-1)*((Bdet2*Bdet2)/(4*Npobt2*Npobt2)))+sigmacuadradat2);
-			        	printf("\n\n\tEl tamaño de la muestra es de: %.2f",nmuest2);
+			        	printf("\n\n\tEl tamaÃ±o de la muestra es de: %.2f",nmuest2);
 						
 					}
 				}
@@ -462,7 +460,7 @@ int main()
 	float bp,vz,vz1,vz2,mediaa,cotap2,vmgpg,vmgp,cotap,mgp,lip,lsp,sumzi,add,scp,mgp1,cotap1,pg,cotap22,pgg,me3,me2,lip1,lsp1,var2,var1,zi,p,p1,o2,p2;
 	
 	printf("\n\tPROPORCION POBLACIONAL 'P' A PARTIR DE UNA M.A.S");
-	printf("\n\n\t\t\t Menu\n\n\t1)Estimador de la Proporcion Poblacional\n\t2)Varianza del estimador p gorro (M.A.S CON REEMPLAZO) \n\t3)Varianza del estimador p gorro (M.A.S SIN REEMPLAZO)\n\t4)Cota\n\t5)Intervalos de confianza\n\t6)Margen de Error\n\t7)Calcular tamaño de la muestra");
+	printf("\n\n\t\t\t Menu\n\n\t1)Estimador de la Proporcion Poblacional\n\t2)Varianza del estimador p gorro (M.A.S CON REEMPLAZO) \n\t3)Varianza del estimador p gorro (M.A.S SIN REEMPLAZO)\n\t4)Cota\n\t5)Intervalos de confianza\n\t6)Margen de Error\n\t7)Calcular tamaÃ±o de la muestra");
 	printf("\n\n\n\tSeleccione una opcion [1-7]: ");
 	scanf("%i",&number);
 	if(number==1 || number==2 || number==3 || number==4 || number==5 || number==6 || number==7)
@@ -476,7 +474,7 @@ int main()
 		printf("\n\tUsted selecciono calcular el estimador 'p gorro' para proporcion poblacional");
 		printf("\n\tIndique el tamano de su muestra, es decir el valor de n:");
 		scanf("%i",&w);
-		printf("\n\t ¿Usted conoce la suma de las yi? [SI=1/NO=2]: ");
+		printf("\n\t Â¿Usted conoce la suma de las yi? [SI=1/NO=2]: ");
 		scanf("%i",&v);
 		if(v==1)
 		{
@@ -504,7 +502,7 @@ int main()
 		
 		case 2: 
 		printf("\n\tUsted selecciono estimar la varianza para una M.A.S CON REEMPLAZO");
-		printf("\n\t¿Desea hacerlo con sigma cuadrada o tiene los valores de pq?: \n\t[CON SIGMA CUADRADA=1/CON pq=2]: ");
+		printf("\n\tÂ¿Desea hacerlo con sigma cuadrada o tiene los valores de pq?: \n\t[CON SIGMA CUADRADA=1/CON pq=2]: ");
 		scanf("%i",&o);
 		if(o==1)
 		{
@@ -530,11 +528,11 @@ int main()
 		case 3:
 		printf("\n\tUsted selecciono estimar la varianza de p gorro para una M.A.S SIN REEMPLAZO");
 		{
-			printf("\n\t\t ¿Sigma cuadrada es conocida? [SI=1/NO=2]: ");
+			printf("\n\t\t Â¿Sigma cuadrada es conocida? [SI=1/NO=2]: ");
 			scanf("%i",&v2);
 			if(v2==1){
 				printf("\n\tVARIANZA PARA SIGMA CONOCIDA");
-				printf("\n\t¿Desea hacerlo con sigma cuadrada o con pq?: \n\t[CON SIGMA CUADRADA=1/CON pq=2]: ");
+				printf("\n\tÂ¿Desea hacerlo con sigma cuadrada o con pq?: \n\t[CON SIGMA CUADRADA=1/CON pq=2]: ");
 		        scanf("%i",&o1);
 		        if(o1==1)
 		        {
@@ -564,7 +562,7 @@ int main()
 			}
 			else{
 				printf("\n\tVARIANZA PARA SIGMA DESCONOCIDA");
-				printf("\n\t¿Desea hacerlo con sigma cuadrada o con pq?: \n\t[CON SIGMA CUADRADA=1/CON pq=2]: ");
+				printf("\n\tÂ¿Desea hacerlo con sigma cuadrada o con pq?: \n\t[CON SIGMA CUADRADA=1/CON pq=2]: ");
 		        scanf("%i",&o2);
 		        if(o2==1)
 		        {
@@ -597,7 +595,7 @@ int main()
 		case 4:
 			{
 				printf("\n\tUsted selecciono calcular la cota");
-				printf("\n\t\t ¿Sigma cuadrada es conocida? [SI=1/NO=2]: ");
+				printf("\n\t\t Â¿Sigma cuadrada es conocida? [SI=1/NO=2]: ");
 			    scanf("%i",&v3);
 			    if(v3==1){
 				printf("\n\tCOTA PARA SIGMA CUADRADA CONOCIDA");
@@ -619,7 +617,7 @@ int main()
 		case 5:
 			{
 				printf("\n\t Usted selecciono calcular los intervalos de confianza (entre cota y p gorro): ");
-				printf("\n\t\t ¿Sigma cuadrada es conocida? [SI=1/NO=2]: ");
+				printf("\n\t\t Â¿Sigma cuadrada es conocida? [SI=1/NO=2]: ");
 		        scanf("%i",&v4);
 		        if(v4==1)
 				{
@@ -652,7 +650,7 @@ int main()
 		case 6:
 			{
 				printf("\n\t Usted selecciono calcular el Margen de Error: ");
-				printf("\n\t\t¿Sigma cuadrada es conocida? [SI=1/NO=2]: ");
+				printf("\n\t\tÂ¿Sigma cuadrada es conocida? [SI=1/NO=2]: ");
 				scanf("%i",&v5);
 				if(v5==1){
 					printf("\n\tIndique el valor de p Gorro:");
@@ -675,63 +673,63 @@ int main()
 			break;
 			case 7:
 				{
-					printf("\n\t Usted selecciono calcular el tamaño de la muestra: ");
-					printf("\n\t\t ¿Sigma cuadrada es conocida? [SI=1/NO=2]: ");
+					printf("\n\t Usted selecciono calcular el tamaÃ±o de la muestra: ");
+					printf("\n\t\t Â¿Sigma cuadrada es conocida? [SI=1/NO=2]: ");
 			        scanf("%i",&g4);
 			        if(g4==1)
 			        {
-			        	printf("\n\t¿Desea hacerlo con sigma cuadrada o con pq?: \n\t[CON SIGMA CUADRADA=1/CON pq=2]: ");
+			        	printf("\n\tÂ¿Desea hacerlo con sigma cuadrada o con pq?: \n\t[CON SIGMA CUADRADA=1/CON pq=2]: ");
 		                scanf("%i",&on1);
 		                if(on1==1)
 		                {
-		                	printf("\n\tIndique el tamaño de la poblacion, es decir el valor de N: ");
+		                	printf("\n\tIndique el tamaÃ±o de la poblacion, es decir el valor de N: ");
 			        	    scanf("%i",&Npobp1);
 			        	    printf("\n\tIndique el valor de sigma cuadrada: ");
 			        	    scanf("%f",&sigmacuadradap1);
 			        	    printf("\n\tIndique el valor de cota: ");
 			        	    scanf("%f",&Bdep1);
 			        	    nmuesp1=((Npobp1)*(sigmacuadradap1))/(((Npobp1-1)*((Bdep1*Bdep1)/(4*Npobp1*Npobp1)))+sigmacuadradap1);
-			        	    printf("\n\n\tEl tamaño de la muestra es de: %.2f",nmuesp1);
+			        	    printf("\n\n\tEl tamaÃ±o de la muestra es de: %.2f",nmuesp1);
 		                	
 						}
 						else
 						{
-							printf("\n\tIndique el tamaño de la poblacion, es decir el valor de N: ");
+							printf("\n\tIndique el tamaÃ±o de la poblacion, es decir el valor de N: ");
 			        	    scanf("%i",&Npobp1);
 			        	    printf("\n\tIndique el valor de p: ");
 			        	    scanf("%f",&pdep1);
 			        	    printf("\n\tIndique el valor de cota: ");
 			        	    scanf("%f",&Bdep1);
 			        	    nmuesp1=((Npobp1)*(pdep1*(pdep1-1)))/(((Npobp1-1)*((Bdep1*Bdep1)/(4*Npobp1*Npobp1)))+(pdep1*(pdep1-1)));
-			        	    printf("\n\n\tEl tamaño de la muestra es de: %.2f",nmuesp1);	
+			        	    printf("\n\n\tEl tamaÃ±o de la muestra es de: %.2f",nmuesp1);	
 						}
 					}
 					else
 					{
-						printf("\n\t¿Desea hacerlo con sigma cuadrada o con pq?: \n\t[CON SIGMA CUADRADA=1/CON pq=2]: ");
+						printf("\n\tÂ¿Desea hacerlo con sigma cuadrada o con pq?: \n\t[CON SIGMA CUADRADA=1/CON pq=2]: ");
 		                scanf("%i",&on2);
 		                if(on2==1)
 		                {
-		                	printf("\n\tIndique el tamaño de la poblacion, es decir el valor de N: ");
+		                	printf("\n\tIndique el tamaÃ±o de la poblacion, es decir el valor de N: ");
 			        	    scanf("%i",&Npobp2);
 			        	    printf("\n\tIndique el valor de sigma cuadrada: ");
 			        	    scanf("%f",&sigmacuadradap2);
 			        	    printf("\n\tIndique el valor de cota: ");
 			        	    scanf("%f",&Bdep2);
 			        	    nmuesp2=((Npobp2)*(sigmacuadradap2))/(((Npobp2-1)*((Bdep2*Bdep2)/(4*Npobp2*Npobp2)))+sigmacuadradap2);
-			        	    printf("\n\n\tEl tamaño de la muestra es de: %.2f",nmuesp2);
+			        	    printf("\n\n\tEl tamaÃ±o de la muestra es de: %.2f",nmuesp2);
 		                	
 						}
 						else
 						{
-							printf("\n\tIndique el tamaño de la poblacion, es decir el valor de N: ");
+							printf("\n\tIndique el tamaÃ±o de la poblacion, es decir el valor de N: ");
 			        	    scanf("%i",&Npobp2);
 			        	    printf("\n\tIndique el valor de p gorrito: ");
 			        	    scanf("%f",&pdep2);
 			        	    printf("\n\tIndique el valor de cota: ");
 			        	    scanf("%f",&Bdep2);
 			        	    nmuesp2=((Npobp2)*(pdep2*(pdep2-1)))/(((Npobp2-1)*((Bdep2*Bdep2)/(4*Npobp2*Npobp2)))+(pdep2*(pdep2-1)));
-			        	    printf("\n\n\tEl tamaño de la muestra es de: %.2f",nmuesp2);	
+			        	    printf("\n\n\tEl tamaÃ±o de la muestra es de: %.2f",nmuesp2);	
 						}	
 					}
 					
